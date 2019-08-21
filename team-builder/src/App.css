@@ -31,3 +31,26 @@
     transform: rotate(360deg);
   }
 }
+
+Form {
+  border: 2px solid black;
+  width:70%;
+  height: ;
+  background: firebrick;
+
+}
+input{
+  background:black;
+  color:white;
+  width: 12rem;
+}
+.team-members{
+  border: 3px solid black;
+  width:50%;
+  align-self: center;
+  margin-left:12rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  colorr:white;
+}
