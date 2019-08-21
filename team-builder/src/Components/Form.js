@@ -1,39 +1,72 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Form =(props)=>{
+//Props passed from app are: userInfo(state) and modifyUser(setState)
 
-console.log(props)
+const Form = (props) => {
 
-
-    return(
-        
-         <div className="form">
-         <form>
-           <h1>My Team List</h1>
-           <label>
-               Name:
-               <input type="text" key={props.name} onChange={props.setName} />
-               <button onClick={props.setName}>Enter</button>
-               </label>       
-              <label>
-                 Email:
-                 <input type="text" key={props.email} onChange={props.setEmail}  />
-                 <button onClick={props.setEmail}>Enter</button>
-              </label>
-<label>
-    Role:
-    <input type="text" key={props.role} onChange={props.setRole}   />
-    <button onClick={props.setRole}>Enter</button>
-</label>
-
-        </form>
+   function editMember(){
+ 
+      }
+     const [user, setUser] = useState(
+    {
+      name: "",
+      email: "",
+      role: '',
+    }
+  )
+    function handleSubmit(event) {
+    event.preventDefault();
+     props.modifyUser([...props.userInfo, user])
+    //Reset the form information on screen
+    setUser(    {
+      name: "",
+      email: "",
+      role: '',
+    })
 
 
+  }
 
-        </div>
+  function handleChange(event) {
+    const newUser = { ...user, [event.target.name]: event.target.value };
+    //Adding new user
+    setUser(newUser);
+  }
+  return (
+
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+      <input type="text" id="name" name="name" onChange={handleChange} value={user.name}/>
+      </label>
+      <label>
+        E-Mail:
+      <input type="email" id="name" name="email" onChange={handleChange} value={user.email}/>
+      </label>
+      <label>
+        Role:
+      <input type="text" id="name" name="role" onChange={handleChange} value={user.role}/>
+      </label>
+      <button type="submit">Submit!</button>
+    </form>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
         
    
-    )
     
-}
+    
+
 export default Form
