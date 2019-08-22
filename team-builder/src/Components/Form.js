@@ -39,6 +39,7 @@ const Form = (props) => {
         Name:
       <input type="text" id="name" name="name" onChange={handleChange} value={user.name}/>
       </label>
+      
       <label>
         E-Mail:
       <input type="email" id="name" name="email" onChange={handleChange} value={user.email}/>

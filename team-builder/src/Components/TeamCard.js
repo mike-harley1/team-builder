@@ -13,9 +13,15 @@ const {name, email, role} = props.person;
 return(
 
     <div className="team-member">
-        <div>Name: {name}</div>
-        <div>Email: {email}</div>
-        <div>Role: {role}</div>
+        <div>Name: 
+        {name}</div>
+        <br/>
+        <div>Email: 
+        {email}</div>
+        <br/>
+        <div>Role: 
+        {role}</div>
+        <br/>
         <button onClick={()=> props.editButton(props.person)}>Edit</button>
     </div>   
     )

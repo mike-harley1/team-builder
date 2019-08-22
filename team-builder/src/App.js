@@ -7,20 +7,11 @@ import TeamCard from './Components/TeamCard';
 export default function App() {
   const teamMembers =[
     {
-        name:"",
-        email:"",
-        role:""
+        name:"Mike",
+        email:"info@mike-harley.com",
+        role:"Boss"
     },
-    {
-        name:"",
-        email:"",
-        role:""
-    },
-    {
-        name:"",
-        email:"",
-        role:""
-    }
+
 ]
 
   const [teamUser, setTeamUser]=useState(teamMembers)
@@ -29,7 +20,8 @@ export default function App() {
   return (
     <div className="App">
       <Form userInfo={teamUser} modifyUser={setTeamUser} editMember={memberToEdit}/>
-      <div className='team-members'><TeamCard userInfo={teamUser} setEdit={setMemberToEdit}/></div>
+      <div className='team-members'>
+        <TeamCard userInfo={teamUser} setEdit={setMemberToEdit}/></div>
     </div>
   );
 }
